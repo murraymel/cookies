@@ -4,7 +4,7 @@ class GreetingsController < ApplicationController
   end
 
   def introduce
-    cookies[:visitor] = 'Somebody'
+    cookies[:visitor] = params[:person]
     redirect_to '/hi'
   end
 end
