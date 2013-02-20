@@ -9,5 +9,7 @@ class GreetingsController < ApplicationController
   end
 
   def goodbye
+    cookies[:visitor] = nil
+    redirect_to '/hi'
   end
 end
