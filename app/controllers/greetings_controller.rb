@@ -7,4 +7,7 @@ class GreetingsController < ApplicationController
     cookies[:visitor] = params[:person]
     redirect_to '/hi'
   end
+
+  def goodbye
+  end
 end
