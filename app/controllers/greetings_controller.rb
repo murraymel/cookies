@@ -1,19 +1,19 @@
 class GreetingsController < ApplicationController
   def hello
-    @name = cookies[:visitor]
-    @color = cookies[:color]
-    @size = cookies[:size]
+    @name = session[:visitor]
+    @color = session[:color]
+    @size = session[:size]
   end
 
   def introduce
-    cookies[:visitor] = params[:person]
-    cookies[:color] = params[:color]
-    cookies[:size] = params[:size]
+    session[:visitor] = params[:person]
+    session[:color] = params[:color]
+    session[:size] = params[:size]
     redirect_to '/hi'
   end
 
   def goodbye
-    cookies[:visitor] = nil
+    reset_session
     redirect_to '/hi'
   end
 end
